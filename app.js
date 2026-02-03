@@ -1,10 +1,9 @@
 // ====== DINE LISTER ======
-const BASE = location.hostname.includes("github.io")
-  ? "/" + location.pathname.split("/")[1]
+const BASE = location.hostname.endsWith("github.io")
+  ? "/" + location.pathname.replace(/^\/+/, "").split("/")[0]
   : "";
 
-  const withBase = (path) => BASE + path;
-
+const withBase = (path) => (BASE ? BASE : "") + path;
 
 const matte1Forelesninger = Array.from({ length: 13 }, (_, i) => {
   const nr = i + 1;
@@ -185,6 +184,8 @@ function openNote(title, path) {
 
   pdfViewer.style.display = "block";
   pdfViewer.src = "";
+  console.log("BASE:", BASE);
+  console.log("Opening:", withBase(path));
   setTimeout(() => (pdfViewer.src = withBase(path)), 0);
 
   step = 4; // notatvisning

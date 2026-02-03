@@ -49,7 +49,7 @@ const itgkOvinger = [
     title: "Øving 6",
     items: [
       { title: "00 aksessering av karakterer i strenger", file: "/itgk-html/oving-6/00_aksessering_av_karakterer_i_strenger.html" },
-      { title: "01 strenger og konkatering", file: "/itgk-html/oving-6/01_strenger_og_konkatering.html" },
+      { title: "01 strenger og konkatering", file: "/itgk-html/oving-6/01_strenger_og_konkatinering.html" },
       { title: "02 slicing av strenger", file: "/itgk-html/oving-6/02_slicing_av_strenger.html" },
       { title: "04 strenghåndtering", file: "/itgk-html/oving-6/04_strenghandtering.html" },
     ],

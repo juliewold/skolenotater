@@ -186,7 +186,10 @@ function openNote(title, path) {
   pdfViewer.src = "";
   console.log("BASE:", BASE);
   console.log("Opening:", withBase(path));
-  setTimeout(() => (pdfViewer.src = withBase(path)), 0);
+  setTimeout(() => {
+    const url = new URL(withBase(path), window.location.origin).toString();
+    pdfViewer.src = url;
+  }, 0);
 
   step = 4; // notatvisning
 }

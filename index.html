@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="no">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skolenotater</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Skolenotater</h1>
+    <p id="breadcrumb">Velg år</p>
+  </header>
+
+  <main class="layout">
+    <section class="panel">
+      <div class="topbar">
+        <button id="backBtn" class="back" style="display:none;">← Tilbake</button>
+      </div>
+
+      <h2 id="stepTitle">År</h2>
+      <div id="menu"></div>
+    </section>
+
+    <section class="panel viewer">
+      <div class="viewerTop">
+        <h2 id="viewerTitle">Notater</h2>
+        <button id="viewerBackBtn" class="back" style="display:none;">← Tilbake</button>
+      </div>
+
+      <div id="viewerList"></div>
+
+      <div id="viewerHint" style="display:none;">Velg et notat for å vise det her.</div>
+      <iframe id="pdfViewer" title="Viewer" style="display:none;"></iframe>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

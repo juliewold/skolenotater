@@ -185,23 +185,26 @@ function showViewerList(subject, items) {
 }
 
 function openNote(title, path) {
-  // Når du åpner et notat: skjul lista, vis innhold, vis “tilbake”
   viewerTitleEl.textContent = title;
   viewerBackBtn.style.display = "inline-block";
-
   viewerListEl.innerHTML = "";
   viewerHint.style.display = "none";
 
+  const isMobile = window.matchMedia("(max-width: 900px)").matches;
+  const fullUrl = new URL(withBase(path), window.location.origin).toString();
+
+  if (isMobile && path.toLowerCase().endsWith(".pdf")) {
+    window.open(fullUrl, "_blank");
+    return;
+  }
+
   pdfViewer.style.display = "block";
   pdfViewer.src = "";
-  console.log("BASE:", BASE);
-  console.log("Opening:", withBase(path));
   setTimeout(() => {
-    const url = new URL(withBase(path), window.location.origin).toString();
-    pdfViewer.src = url;
+    pdfViewer.src = fullUrl;
   }, 0);
 
-  step = 4; // notatvisning
+  step = 4;
 }
 
 viewerBackBtn.onclick = () => {

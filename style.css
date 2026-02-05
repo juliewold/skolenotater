@@ -165,3 +165,9 @@ button.back:hover {
   background: var(--success);
   color: white;
 }
+
+@media (max-width: 900px) {
+  #pdfViewer {
+    height: 82vh;
+  }
+}

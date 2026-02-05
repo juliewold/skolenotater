@@ -3,7 +3,10 @@ const BASE = location.hostname.endsWith("github.io")
   ? "/" + location.pathname.replace(/^\/+/, "").split("/")[0]
   : "";
 
-const withBase = (path) => (BASE ? BASE : "") + path;
+const withBase = (path) => {
+  const p = path.startsWith("/") ? path : "/" + path;
+  return (BASE ? BASE : "") + p;
+};
 
 const matte1Forelesninger = Array.from({ length: 13 }, (_, i) => {
   const nr = i + 1;

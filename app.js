@@ -79,7 +79,9 @@ const exphilNotater = [
 
 const matte3Forelesninger = [
   { title: "Vektorrom", file: "/pdf/matte3C/Vektorrom.pdf"},
-  { title: "Lineærtransformasjoner", file: "/pdf/matte3C/Lineaertransformasjoner.pdf"}
+  { title: "Presentasjonsnotater vektorrom", file: "/pdf/matte3C/Presentasjonsnotater vektorrom.pdf"},
+  { title: "Lineærtransformasjoner", file: "/pdf/matte3C/Lineaertransformasjoner.pdf"},
+  { title: "Presentasjonsnotater lineærtransformasjoner", file: "/pdf/matte3C/Presentasjonsnotater lineaertransformasjoner.pdf"}
 ];
 
 // ====== ÅR/SEMESTER DATA ======

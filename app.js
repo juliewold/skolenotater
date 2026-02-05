@@ -75,9 +75,9 @@ const exphilNotater = [
 ];
 
 const matte3Forelesninger = [
-  { title: "Vektorrom", file: "pdf/matte3C/Vektorrom.pdf"},
-  { title: "Lineærtransformasjoner", file: "pdf/matte3C/Lineærtransformasjoner.pdf"}
-]
+  { title: "Vektorrom", file: "/pdf/matte3C/Vektorrom.pdf"},
+  { title: "Lineærtransformasjoner", file: "/pdf/matte3C/Lineærtransformasjoner.pdf"}
+];
 
 // ====== ÅR/SEMESTER DATA ======
 const START_HOEST = 2025;

@@ -160,7 +160,6 @@ function showViewerList(subject, items) {
   }
 
   items.forEach((item) => {
-    // Gruppe (ITGK Øving X)
     if (item.items && Array.isArray(item.items)) {
       const h = document.createElement("h3");
       h.textContent = item.title;
@@ -175,13 +174,13 @@ function showViewerList(subject, items) {
       return;
     }
 
-    // Vanlig notat
     const b = document.createElement("button");
     b.textContent = "📄 " + item.title;
     b.onclick = () => openNote(item.title, item.file);
     viewerListEl.appendChild(b);
   });
 }
+
 
 function openNote(title, path) {
   viewerTitleEl.textContent = title;
@@ -303,7 +302,6 @@ function goToSubjects() {
 }
 
 backBtn.onclick = () => {
-  // Fra notatvisning → tilbake til notatliste
   if (step === 4) {
     step = 3;
     pdfViewer.style.display = "none";
@@ -311,14 +309,8 @@ backBtn.onclick = () => {
     showViewerList(chosenSubject, currentNoteList);
     return;
   }
-
-  // Fra notatliste → tilbake til fag
   if (step === 3) return goToSubjects();
-
-  // Fra fag → tilbake til semester
   if (step === 2) return goToSemesters();
-
-  // Fra semester → tilbake til år
   if (step === 1) return goToYears();
 };
 

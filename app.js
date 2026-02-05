@@ -131,7 +131,6 @@ const backBtn = document.getElementById("backBtn");
 
 // Viewer (samme flate for liste og innhold)
 const viewerTitleEl = document.getElementById("viewerTitle");
-const viewerBackBtn = document.getElementById("viewerBackBtn");
 const viewerListEl = document.getElementById("viewerList");
 const pdfViewer = document.getElementById("pdfViewer");
 const viewerHint = document.getElementById("viewerHint");

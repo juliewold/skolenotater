@@ -74,6 +74,11 @@ const exphilNotater = [
   { title: "Tilleggspensum", file: "/pdf/exphil/6) Tilleggspensum.pdf" },
 ];
 
+const matte3Forelesninger = [
+  { title: "Vektorrom", file: "pdf/matte3C/Vektorrom.pdf"},
+  { title: "Lineærtransformasjoner", file: "pdf/matte3C/Lineærtransformasjoner.pdf"}
+]
+
 // ====== ÅR/SEMESTER DATA ======
 const START_HOEST = 2025;
 
@@ -91,7 +96,9 @@ const curriculum = {
       "Diskré matematikk": diskreForelesninger,
       "Exphil": exphilNotater,
     },
-    [`Vår ${START_HOEST + 1}`]: {},
+    [`Vår ${START_HOEST + 1}`]: {
+      "Matte 3C": matte3Forelesninger,
+    },
   },
   2: {
     [`Høst ${START_HOEST + 1}`]: {},

@@ -190,22 +190,26 @@ function openNote(title, path) {
   viewerListEl.innerHTML = "";
   viewerHint.style.display = "none";
 
+  const url = new URL(withBase(path), window.location.origin).toString();
   const isMobile = window.matchMedia("(max-width: 900px)").matches;
-  const fullUrl = new URL(withBase(path), window.location.origin).toString();
+  const isPdf = path.toLowerCase().endsWith(".pdf");
 
-  if (isMobile && path.toLowerCase().endsWith(".pdf")) {
-    window.open(fullUrl, "_blank");
+  // 📱 Mobil (Safari + Chrome): åpne PDF i ny fane
+  if (isMobile && isPdf) {
+    window.open(url, "_blank");
     return;
   }
 
+  // 💻 Desktop: vis inne i siden
   pdfViewer.style.display = "block";
   pdfViewer.src = "";
   setTimeout(() => {
-    pdfViewer.src = fullUrl;
+    pdfViewer.src = url;
   }, 0);
 
   step = 4;
 }
+
 
 viewerBackBtn.onclick = () => {
   // Tilbake fra notatvisning til lista i samme fag

@@ -145,7 +145,6 @@ let currentNoteList = []; // listen for valgt fag
 
 function resetViewerToEmpty() {
   viewerTitleEl.textContent = "Notater";
-  viewerBackBtn.style.display = "none";
   viewerListEl.innerHTML = "Velg et fag for å se notater.";
   viewerHint.style.display = "none";
   pdfViewer.style.display = "none";
@@ -154,7 +153,6 @@ function resetViewerToEmpty() {
 
 function showViewerList(subject, items) {
   viewerTitleEl.textContent = subject;
-  viewerBackBtn.style.display = "none";
   viewerListEl.innerHTML = "";
 
   if (!items || items.length === 0) {
@@ -188,7 +186,6 @@ function showViewerList(subject, items) {
 
 function openNote(title, path) {
   viewerTitleEl.textContent = title;
-  viewerBackBtn.style.display = "inline-block";
   viewerListEl.innerHTML = "";
   viewerHint.style.display = "none";
 
@@ -211,16 +208,6 @@ function openNote(title, path) {
 
   step = 4;
 }
-
-
-viewerBackBtn.onclick = () => {
-  // Tilbake fra notatvisning til lista i samme fag
-  step = 3;
-  pdfViewer.style.display = "none";
-  pdfViewer.src = "";
-  viewerBackBtn.style.display = "none";
-  showViewerList(chosenSubject, currentNoteList);
-};
 
 function setBackVisible(visible) {
   backBtn.style.display = visible ? "inline-block" : "none";
@@ -317,15 +304,25 @@ function goToSubjects() {
 }
 
 backBtn.onclick = () => {
-  // Hvis du er inne i en notatvisning, må du først tilbake til lista
+  // Fra notatvisning → tilbake til notatliste
   if (step === 4) {
-    viewerBackBtn.onclick();
+    step = 3;
+    pdfViewer.style.display = "none";
+    pdfViewer.src = "";
+    showViewerList(chosenSubject, currentNoteList);
     return;
   }
-  if (step === 3) return goToSubjects();   // fra notatliste tilbake til fag
-  if (step === 2) return goToSemesters();  // fra fag tilbake til semester
-  if (step === 1) return goToYears();      // fra semester tilbake til år
+
+  // Fra notatliste → tilbake til fag
+  if (step === 3) return goToSubjects();
+
+  // Fra fag → tilbake til semester
+  if (step === 2) return goToSemesters();
+
+  // Fra semester → tilbake til år
+  if (step === 1) return goToYears();
 };
+
 
 // Start
 goToYears();

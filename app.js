@@ -81,7 +81,8 @@ const matte3Forelesninger = [
   { title: "Vektorrom", file: "/pdf/matte3C/Vektorrom.pdf"},
   { title: "Presentasjonsnotater vektorrom", file: "/pdf/matte3C/Presentasjonsnotater vektorrom.pdf"},
   { title: "Lineærtransformasjoner", file: "/pdf/matte3C/Lineaertransformasjoner.pdf"},
-  { title: "Presentasjonsnotater lineærtransformasjoner", file: "/pdf/matte3C/Presentasjonsnotater lineaertransformasjoner.pdf"}
+  { title: "Presentasjonsnotater lineærtransformasjoner", file: "/pdf/matte3C/Presentasjonsnotater lineaertransformasjoner.pdf"},
+  { title: "Indreproduktrom", file: "/pdf/matte3C/Indreproduktrom 1.pdf"}
 ];
 
 // ====== ÅR/SEMESTER DATA ======
